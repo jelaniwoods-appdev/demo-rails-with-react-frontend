@@ -1,15 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
+import { Editor } from './editor';
 
-interface AppProps {
-  arg: string;
-}
-
-const App = ({ arg }: AppProps) => {
-  return <div>{`Hello, ${arg}!`}</div>;
-};
 
 document.addEventListener("DOMContentLoaded", () => {
-  const rootEl = document.getElementById("root");
-  ReactDOM.render(<App arg="Rails 7 with ESBuild" />, rootEl);
+    const container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(<Editor />);
 });
